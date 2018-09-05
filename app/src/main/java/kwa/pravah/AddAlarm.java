@@ -21,7 +21,6 @@ import java.util.Calendar;
 
 
 import kwa.pravah.database.DbManager;
-import kwa.pravah.CancelAlarm;
 
 public class AddAlarm extends AppCompatActivity {
     private String POWERON="ON";
