@@ -177,7 +177,7 @@ public class DbManager extends SQLiteOpenHelper {
 
     public Cursor viewData() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select " + MOBILE_NO +","+NAME +","  +POWER +"," +PUMP +"," +TIME_ON +"," +TIME_OFF + " from " + TABLE_SMS , null);
+        Cursor res = db.rawQuery("select "+NAME +","  +POWER +"," +PUMP +"," +TIME_ON +"," +TIME_OFF + " from " + TABLE_SMS , null);
         return res;
     }
 

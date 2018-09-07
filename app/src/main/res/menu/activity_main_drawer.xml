@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_status"
-            android:icon="@drawable/ic_textsms"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="Home" />
 
         <item
