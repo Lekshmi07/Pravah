@@ -31,7 +31,7 @@ public class message {
     @Expose
     private String sender;
 
-    public String getTm() {
+    public String gettm() {
         return tm;
     }
 

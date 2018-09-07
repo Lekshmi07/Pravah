@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity
                     while (cursor.moveToNext()) {
 
 
-                        String number_str = cursor.getString(cursor.getColumnIndex(db.MOBILE_NO));
+                       // String number_str = cursor.getString(cursor.getColumnIndex(db.MOBILE_NO));
                         String name_str = cursor.getString(cursor.getColumnIndex(db.NAME));
                         String power_str = cursor.getString(cursor.getColumnIndex(db.POWER));
                         String pump_str = cursor.getString(cursor.getColumnIndex(db.PUMP));
@@ -85,14 +85,14 @@ public class MainActivity extends AppCompatActivity
                         String off_str = cursor.getString(cursor.getColumnIndex(db.TIME_OFF));
 
                         View tableRow = LayoutInflater.from(this).inflate(R.layout.content_main, null, false);
-                        TextView Num = (TextView) tableRow.findViewById(R.id.Number);
+                      //  TextView Num = (TextView) tableRow.findViewById(R.id.Number);
                         TextView Name = (TextView) tableRow.findViewById(R.id.Name);
                         TextView Power = (TextView) tableRow.findViewById(R.id.power);
                         TextView Pump = (TextView) tableRow.findViewById(R.id.pump);
                         TextView ON = (TextView) tableRow.findViewById(R.id.ON);
                         TextView OFF = (TextView) tableRow.findViewById(R.id.OFF);
 
-                        Num.setText(number_str.toString());
+                      //  Num.setText(number_str.toString());
                         Name.setText(name_str.toString());
                         Power.setText(power_str.toString());
                         Pump.setText(pump_str.toString());
