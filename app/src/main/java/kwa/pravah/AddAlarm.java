@@ -117,18 +117,20 @@ public class AddAlarm extends AppCompatActivity {
                     {
                         if (db.getnumber(num) == true) {
 
+                            /*
                             Cursor cursor=db.getPendingIntent(num);
                             if(cursor.getCount()!=0) {
 
                                 cursor.moveToFirst();
                                 String Pending_intent_to_on = cursor.getString(cursor.getColumnIndex(db.PENDING_INTENT_ON));
 
-                                cancelAlarm(Pending_intent_to_on);
+                               // cancelAlarm(Pending_intent_to_on);
 
 
 
                             }
 
+                    */
                             db.addPendingIntent_ON(num, alarmID_to_on);
                             db.addTime_ON(num,time);
                         } else {
@@ -186,17 +188,18 @@ public class AddAlarm extends AppCompatActivity {
 
                         String alarmID_to_off= String.valueOf(alarmID);
 
-
+/*
                         Cursor cursor=db.getPendingIntent(num);
                         if(cursor.getCount()!=0) {
 
                             cursor.moveToFirst();
                             String Pending_intent_to_off = cursor.getString(cursor.getColumnIndex(db.PENDING_INTENT_OFF));
 
-                            cancelAlarm(Pending_intent_to_off);
+//                            cancelAlarm(Pending_intent_to_off);
 
 
                         }
+                        */
 
                         db.addPendingIntent_OFF(num,alarmID_to_off);
                         db.addTime_OFF(num,time);
@@ -207,6 +210,7 @@ public class AddAlarm extends AppCompatActivity {
 
                 }
             });
+            finish();
         }
         catch (NullPointerException e) {
             Toast.makeText(this, "Null value", Toast.LENGTH_SHORT).show();
@@ -261,13 +265,6 @@ public class AddAlarm extends AppCompatActivity {
         }
     }
 
-    public void cancelAlarm(String pndIntent)
-    {
-        AlarmManager aManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
-        PendingIntent pIntent = PendingIntent.getBroadcast(getApplicationContext(),
-                Integer.parseInt(pndIntent),intent,0);
-        aManager.cancel(pIntent);
-    }
+
 
 }
